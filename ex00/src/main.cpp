@@ -5,7 +5,7 @@ int main(void)
 	std::cout << "1. Object on the heap" << std::endl;
 
 	Zombie*	heap_zombie = newZombie("Heap Zombie");
-	std::cout << "Calling announce outside of NewZombie(name) scope"
+	std::cout << "Calling announce() outside of NewZombie(name) scope"
 		<< std::endl;
 	heap_zombie->announce();
 	std::cout << "##########" << std::endl;
