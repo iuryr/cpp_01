@@ -1,3 +1,6 @@
+#ifndef _ZOMBIE_HPP_
+#define _ZOMBIE_HPP_
+
 #include <string>
 
 class	Zombie
@@ -11,3 +14,5 @@ class	Zombie
 		Zombie(std::string name);
 		~Zombie();
 };
+
+#endif //_ZOMBIE_HPP_
