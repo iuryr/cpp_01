@@ -19,7 +19,9 @@ INC_DIR = src/include
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
+	@echo "Linking executable..."
 	@$(CC) $(FLAGS) -I $(INC_DIR) $(SRC_FILES) -o $(NAME)
+	@echo "Done."
 
 #pattern rule for object files
 $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
