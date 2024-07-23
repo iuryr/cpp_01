@@ -23,19 +23,29 @@ void	Harl::_error(void)
 
 void	Harl::complain(std::string level)
 {
-	void	(Harl::*functions[])() = 
+	void (Harl::*functions[])(void) =
 	{
-			&Harl::_debug,
-			&Harl::_info,
-			&Harl::_warning,
-			&Harl::_error,
+		&Harl::_debug,
+		&Harl::_info,
+		&Harl::_warning,
+		&Harl::_error,
 	};
 
-	std::string	levels[] = 
+	std::string levels[] =
 	{
-		"debug",
-		"info", 
-		"warning",
-		"error"
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR"
 	};
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (level == levels[i])
+		{
+			(this->*(functions[i]))();
+			return;
+		}
+	}
+	std::cout << "Unrecognized level" << std::endl;
 }
