@@ -44,6 +44,6 @@ debug: fclean
 	gdb ./$(NAME)
 
 val: all
-	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) $(ARGS)
 
 .PHONY : all clean fclean re
