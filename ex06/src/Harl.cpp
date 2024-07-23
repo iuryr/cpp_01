@@ -52,26 +52,34 @@ void	Harl::complain(std::string level)
 
 void	Harl::filter(std::string level)
 {
-	int	i = 0;
+	std::string levels[] =
+	{
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR"
+	};
 
-	if (level.compare("DEBUG") == 0)
-		i = 1;
-	else if (level.compare("INFO") == 0)
-		i = 2;
-	else if (level.compare("WARNING") == 0)
-		i = 3;
-	else if (level.compare("ERROR") == 0)
-		i = 4;
+	int i = 0;
+
+	while (i < 4)
+	{
+		if (level == levels[i])
+		{
+			break;
+		}
+		i++;
+	}
 
 	switch (i)
 	{
-		case 1:
+		case 0:
 			this->_debug();
-		case 2:
+		case 1:
 			this->_info();
-		case 3:
+		case 2:
 			this->_warning();
-		case 4:
+		case 3:
 			this->_error();
 			break;
 		default:
